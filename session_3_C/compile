@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+# Link and Compile C code including DISLIN routines
+
+# IMPORTANT: 
+# 	DISLIN library and its dependencies will only link properly if you have the libraries installed in the appropriate places. See the DISLIN 'readme' for details. This script works for MAC OSX with OpenMotif21 installed under ~/Applications/ and dislin installed under $HOME/dislin.
+
+if [ $# -eq 0 ]; then echo "Usage: ./compile <main.c> <program_name>"; fi
+
+gcc -m64 -I $DISLIN $1 -L $DISLIN -ldislin -L /Applications/OpenMotif21/lib -lXm -o $2

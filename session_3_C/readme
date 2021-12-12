@@ -1,0 +1,80 @@
+Data Visualization with C Rutgers Libguide Session
+Robert Palmere, 2021
+Email: rdp135@chem.rutgers.edu
+
+Objectives:
+
+* Brief introduction to the DISLIN library
+* Understand the C paradigm
+* Review of previous sessions regarding C
+
+
+Benefits of using the DISLIN library:
+
+* Speed
+* Accessibility
+* Integration
+
+Contents:
+
+	compile          - Compiles each .c program
+	1-setup.c        - Demonstrates DISLIN plot setup features
+	2-setup.c        - Changing minor plot parameters
+	3-setup.c        - Organization and plotting lines
+	4-hist.c         - Plots a histogram of random floats [0, 1]
+	5-histline.c     - Plots a histogram of random floats [0, 1] as a line plot
+    6-interp.c       - Spline interpolation of random float values
+    7-animation_a.c  - Demonstrates animation while holding data frame previous frames
+	7-animation_b.c  - Demonstrates animation while not holding data from previous frames
+    8-3d.c           - 3D plotting of spheres
+    9-quickplot.c    - Demonstrates a quickplot routine for scatter plot
+    10-surface.c     - Demonstrates GUI routines
+	11-axis.c        - Example of how to organize subplots on a page
+    12-application.c - Use case for observing large data sets
+
+DISLIN Author: Helmut Michels
+Email: michels@dislin.de
+
+Setup for linking to DISLIN library on MAC OSX (taken from DISLIN readme):
+
+1.) Download OpenMotif dependency (https://sourceforge.net/projects/openmotif-mac/) 
+
+2.) Open .dmg file and copy OpenMotif21 to Applications folder
+
+3.) Nagivate to /Applications/OpenMotif21/lib and create a symbol link:
+	cd /Applications/OpenMotif21/lib
+	ln -s libXm.3.1.dylib libXm.dylib
+
+4.) untar and navigate to the dislin-11.4 directory and provide where DISLIN should be installed using environment variable:
+	cd dislin-11.4
+	export DISLIN=$HOME/dislin
+
+5.) Install
+	./INSTALL
+
+6.) Edit /etc/profile to include:
+	DISLIN=directory
+	export DISLIN
+	PATH = ${PATH}:${DISLIN}/bin
+	DYLD_LIBRARY_PATH=$DISLIN:$DYLD_LIBRARY_PATH
+	export DYD_LIBRARY_PATH
+
+Dislin Structure:
+
+Most routines in DISLIN can be called anywhere during program execution. Certain routines, however,
+use parameters from other routines and must be called in a fixed order. DISLIN uses a level structure to
+control the order in which routines are called. The levels are:
+
+0 before initialization or after termination
+1 after initialization or a call to ENDGRF
+2 after a call to GRAF or POLAR
+3 after a call to GRAF3 or GRAF3D.
+
+Generally, programs should have the following structure:
+(1) setting of page format, file format and filename
+(2) initialization
+(3) setting of plot parameters
+(4) plotting of the axis system
+(5) plotting the title
+(6) plotting data points
+(7) termination.

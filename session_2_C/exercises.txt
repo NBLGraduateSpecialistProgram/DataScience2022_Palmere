@@ -1,0 +1,13 @@
+Exercises:
+
+1. Write a program which implements a function to print a 1D array to the user C. Write the function so that the argument is taken "by reference" in C and prints the content to the user.
+
+3. Write the same function in Question 1 using C++ vectors.
+
+4. Plot iteration as a function of time for Python list, Python np.array, and Carray and C++ vector.
+
+5. Add np.any() functionality to our Numpy class and demonstrate its use
+
+6. Write a program which takes numbers from the command line and reports the sum.
+
+7. Demonstrate a simple use of function overloading in C++. 
