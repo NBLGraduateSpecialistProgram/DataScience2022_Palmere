@@ -12,4 +12,4 @@ Topics covered, by session number are:
 8. Small Applications Development with Python
 9. Introduction to Machine Learning with Python
 10. Molecular Dynamics with Python
-
+11. Calculator Class example
