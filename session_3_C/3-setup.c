@@ -38,7 +38,7 @@ void place_data(void){
 	linwid(10); // Set the linewidth for lines
 	curve(x, y1, 100); // Plot x, y data using 100 points
 	color("red");
-	curve(x, y2, 100);
+	curve(x, y2, 100); // matplotlib.pyplot.plot()
 }
 
 int main ()

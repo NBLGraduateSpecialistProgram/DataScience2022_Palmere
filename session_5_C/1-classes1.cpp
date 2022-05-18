@@ -13,7 +13,7 @@ int main(){
 
 /*
  * We declared and defined the class Polygon with no data members. 
- * Similar tot he Pythond ata model, C++ also provides a default
+ * Similar to the Python data model, C++ also provides a default
  * constructor for instantiating the class. By providing our own
  * constructor / deconstructor, we will negate the implicit default
  * constructor from the compiler.
